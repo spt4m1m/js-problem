@@ -136,3 +136,24 @@ function ramanNumToInteger(roman) {
 }
 
 console.log(ramanNumToInteger("IX"));
+
+
+// Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
+
+function secondSmallestElement(ary) {
+    let smallest = Infinity;
+    let secondSmallest = Infinity;
+
+    for (let num of ary) {
+        if (num < smallest) {
+            secondSmallest = smallest;
+            smallest = num;
+        } else if (num < secondSmallest && num !== smallest) {
+            secondSmallest = num;
+        }
+    }
+
+    return secondSmallest;
+}
+
+console.log(secondSmallestElement([1, 5, 2, 8, 3, 7, 6, 4]));

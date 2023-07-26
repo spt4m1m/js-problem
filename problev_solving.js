@@ -24,3 +24,24 @@ function positiveNumberSum(ary) {
 }
 
 console.log(positiveNumberSum([2, -5, 10, -3, 7]));
+
+
+// Task 3: Write a JavaScript program to find the most frequent element in an array and return it.  Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3
+
+function frequentNumber(arr) {
+    let counts = {};
+    let maxCount = 0;
+    let frequentNum;
+
+    for (let num of arr) {
+        counts[num] = (counts[num] || 0) + 1;
+        if (counts[num] > maxCount) {
+            maxCount = counts[num];
+            frequentNum = num;
+        }
+    }
+
+    return frequentNum;
+}
+
+console.log(frequentNumber([3, 5, 2, 5, 3, 3, 1, 4, 5]));
